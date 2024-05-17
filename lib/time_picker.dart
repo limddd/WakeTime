@@ -10,7 +10,7 @@ class TimePickerrr extends StatefulWidget {
 
 class _TimePickerrrState extends State<TimePickerrr> {
   DateTime dateTime = DateTime.now();
-  var music = ['아기상어', '뽀로로', '조희연바보'];
+  var music = ['아기상어', '뽀로', '조희연바보'];
   final List<String> musicList =
       List.generate(10, (index) => "조희연바보 ${index + 1}");
   @override

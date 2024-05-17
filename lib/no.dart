@@ -11,7 +11,7 @@ class AddAlarm extends StatefulWidget {
 class _AddAlarmState extends State<AddAlarm> {
   TimeOfDay initialTime = TimeOfDay.now();
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildC ontext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(0.5),
