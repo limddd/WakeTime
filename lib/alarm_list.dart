@@ -8,7 +8,7 @@ class AlaramView extends StatefulWidget {
 }
 
 class _AlaramViewState extends State<AlaramView> {
-  final  items = List<String>.generate(6, (i) => "알람 ${i + 1}");
+  final  items = L ist<String>.generate(6, (i) => "알람 ${i + 1}");
 
   bool isSelected = false;
 
