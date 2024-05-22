@@ -8,14 +8,13 @@ class TestList extends StatefulWidget {
 }
 
 class _TestListState extends State<TestList> {
-  final List<String> testList =
-      List.generate(10, (index) => "조희연바보 ${index + 1}");
+  final List<String> testList = List.generate(10, (index) => "알람 ${index + 1}");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          const Text('조희연짱바보'),
+          const Text('WakeTime'),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 20),
           ),
@@ -32,7 +31,7 @@ class _TestListState extends State<TestList> {
                     child: const Padding(
                       padding: EdgeInsets.only(right: 30),
                       child: Text(
-                        '진짜바보',
+                        '삭제',
                         style: TextStyle(fontSize: 30, color: Colors.white),
                       ),
                     ),
