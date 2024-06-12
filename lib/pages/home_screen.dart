@@ -1,19 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:wake_time/alarm_screen.dart';
-import 'package:wake_time/time_picker.dart';
+import 'package:wake_time/helpers/list_box_helper.dart';
+import 'package:wake_time/helpers/selected_box_helper.dart';
+import 'package:wake_time/pages/alarm_screen.dart';
+import 'package:wake_time/pages/add_alarm_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  handleResetHive() async {
+    await SelectedHelper().deleteAll();
+    await AlarmListHelper().deleteAll();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const TestList(),
       appBar: AppBar(
+        title: const Text('WakeTime'),
+        leading: IconButton(
+            onPressed: () => handleResetHive(),
+            icon: const Icon(Icons.reset_tv)),
         actions: [
-          const IconButton(
-            onPressed: null,
-            icon: Icon(
+          IconButton(
+            onPressed: () async {
+              var v = await AlarmListHelper().read();
+              debugPrint(v.toString());
+            },
+            icon: const Icon(
               Icons.bluetooth,
               size: 40.0,
             ),
@@ -39,6 +52,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+      body: const AlarmScreen(),
     );
   }
 }
