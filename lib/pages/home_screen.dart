@@ -4,9 +4,14 @@ import 'package:wake_time/helpers/selected_box_helper.dart';
 import 'package:wake_time/pages/alarm_screen.dart';
 import 'package:wake_time/pages/add_alarm_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   handleResetHive() async {
     await SelectedHelper().deleteAll();
     await AlarmListHelper().deleteAll();

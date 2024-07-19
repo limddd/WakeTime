@@ -4,7 +4,6 @@ import 'package:multiselect_dropdown_flutter/multiselect_dropdown_flutter.dart';
 import 'package:uuid/uuid.dart';
 import 'package:wake_time/helpers/list_box_helper.dart';
 import 'package:wake_time/models/list_box_model.dart';
-import 'package:wake_time/pages/alarm_screen.dart';
 import 'package:wake_time/pages/home_screen.dart';
 import 'package:wake_time/utils/time_picker.dart';
 
@@ -92,7 +91,7 @@ class _TimePickerrrState extends State<TimePickerrr> {
             TimePickerSpinner(
               locale: const Locale('kr', ''),
               time: dateTime,
-              is24HourMode: true,
+              is24HourMode: false,
               isShowSeconds: false,
               itemHeight: 90,
               itemWidth: 60,
@@ -106,6 +105,7 @@ class _TimePickerrrState extends State<TimePickerrr> {
               onTimeChange: (time) {
                 setState(
                   () {
+                    debugPrint(time.toString());
                     dateTime = time;
                   },
                 );
@@ -181,7 +181,7 @@ class _TimePickerrrState extends State<TimePickerrr> {
                             includeSearch: false,
                             includeSelectAll: true,
                             isLarge: true,
-                            width: 200,
+                            width: MediaQuery.of(context).size.width / 2,
                             //    boxDecoration: BoxDecoration(borderRadius: ),
                           )
                         ],
